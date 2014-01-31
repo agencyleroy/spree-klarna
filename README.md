@@ -1,17 +1,19 @@
-![Klarna Logo](https://raw.github.com/futhr/spree-klarna/2-0-stable/klarna.png)
-[![Build Status](https://secure.travis-ci.org/futhr/spree-klarna.png?branch=2-0-stable)](http://travis-ci.org/futhr/spree-klarna)
+![Klarna Logo](https://raw.github.com/futhr/spree-klarna/master/klarna.png)
+[![Build Status](https://travis-ci.org/futhr/spree-klarna.png?branch=master)](https://travis-ci.org/futhr/spree-klarna)
 [![Dependency Status](https://gemnasium.com/futhr/spree-klarna.png)](https://gemnasium.com/futhr/spree-klarna)
-[![Coverage Status](https://coveralls.io/repos/futhr/spree-klarna/badge.png?branch=2-0-stable)](https://coveralls.io/r/futhr/spree-klarna)
+[![Coverage Status](https://coveralls.io/repos/futhr/spree-klarna/badge.png?branch=master)](https://coveralls.io/r/futhr/spree-klarna)
 
 *Klarna Checkout based on [Klarna API 2.0][7]*
 
 Contact [Klarna][1] to learn more about their integrated services and what it takes to get them up and running.
 
+*NOTE THAT THIS GEM IS IN WIP MODE!*
+
 ## Installation
 
-Add to your `Gemfile`
+Add to your `Gemfile`:
 ```ruby
-gem 'spree_klarna', github: 'futhr/spree-klarna', branch: '2-0-stable'
+gem 'spree_klarna', github: 'futhr/spree-klarna', branch: 'master'
 ```
 
 Run
@@ -46,14 +48,14 @@ Starting point:
 * Ensure specs pass by running `bundle exec rspec spec`
 * Submit your pull request
 
-Copyright (c) 2013 [Tobias Bohwalli][8] and [contributors][9], released under the [New BSD License][4]
+Copyright (c) 2014 [Tobias Bohwalli][8] and [contributors][9], released under the [New BSD License][4]
 
 [1]: http://klarna.se
 [2]: http://www.fsf.org/licensing/essays/free-sw.html
 [3]: https://github.com/futhr/spree-klarna/issues
-[4]: https://github.com/futhr/spree-klarna/blob/2-0-stable/LICENSE.md
+[4]: https://github.com/futhr/spree-klarna/blob/master/LICENSE.md
 [5]: http://www.localeapp.com/projects/
 [6]: https://github.com/thoughtbot/guides
 [7]: https://docs.klarna.com/en/getting-started#introduction
 [8]: https://github.com/futhr
-[9]: https://github.com/futhr/spree-klarna/contributors
+[9]: https://github.com/futhr/spree-klarna/graphs/contributors

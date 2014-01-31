@@ -1,4 +1,4 @@
-if ENV['COVERAGE']
+if ENV['CI']
   require 'simplecov'
   require 'coveralls'
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
@@ -21,10 +21,10 @@ require File.expand_path('../dummy/config/environment.rb', __FILE__)
 require 'rspec/rails'
 require 'i18n-spec'
 require 'capybara/rspec'
+require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'webmock/rspec'
 require 'shoulda-matchers'
-require 'elabs_matchers'
 require 'excon'
 require 'ffaker'
 require 'database_cleaner'
@@ -64,9 +64,11 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, { debug: true, inspector: true, js_errors: true })
+  if ENV['CI']
+    Capybara.register_driver :poltergeist do |app|
+      Capybara::Poltergeist::Driver.new(app, { debug: false, inspector: false, js_errors: false })
+    end
+    Capybara.javascript_driver = :poltergeist
   end
-  Capybara.javascript_driver = :poltergeist
   Capybara.ignore_hidden_elements = false
 end

@@ -1,11 +1,3 @@
-module Spree
-  module Klarna
-    def self.config(&block)
-      yield(Spree::GoogleBase::Config)
-    end
-  end
-end
-
 module SpreeKlarna
   class Engine < Rails::Engine
     require 'spree/core'
@@ -14,12 +6,8 @@ module SpreeKlarna
 
     config.autoload_paths += %W(#{config.root}/lib)
 
-    config.generators do |g|
-      g.test_framework :rspec
-    end
-
-    initializer 'spree.klarna.environment', before: :load_config_initializers do |app|
-      Spree::Klarna::Config = Spree::KlarnaConfiguration.new
+    initializer 'spree.gateway.payment_methods', after: 'spree.register.payment_methods' do |app|
+      app.config.spree.payment_methods << Spree::PaymentMethod::KlarnaInvoice
     end
 
     def self.activate
